@@ -4,6 +4,9 @@ body{
     background-image: url(fundopreto.jpg) ;
 }
 .tela-login{
+    display: flex;
+    flex-direction: column;
+
     background-color: rgba(26, 25, 25, 0.918);
     position:absolute;
     top: 20%;
@@ -12,6 +15,11 @@ body{
     border-radius: 15px;
     height: 350px;
 }
+
+.tela-login input, button{
+    margin-top: 10px;
+}
+
 .logo{
     position: absolute;
     top: 20%;
