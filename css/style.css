@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(fundopreto.jpg) ;
+}
+.tela-login{
+    background-color: rgba(26, 25, 25, 0.918);
+    position:absolute;
+    top: 20%;
+    left: 70%;
+    padding: 80px;
+    border-radius: 15px;
+    height: 350px;
+}
+.logo{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 350px;
+}
