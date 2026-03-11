@@ -1,10 +1,12 @@
 body{
+
+    background-color: rgba(0, 0, 0, 0.932);
     background-image: linear-gradient(blue, green);
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(fundopreto.jpg) ;
 }
 .tela-login{
-    background-color: rgba(26, 25, 25, 0.918);
+    background-color: rgba(151, 145, 145, 0.5);
     position:absolute;
     top: 20%;
     left: 70%;
