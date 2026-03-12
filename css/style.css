@@ -4,17 +4,21 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(fundopreto.jpg) ;
-    background-color: #1d0c01;
+    background-image: linear-gradient(to bottom,#7c6037,#34150f,#050100);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 .tela-login{
     display: flex;
     flex-direction: column;
 
-    background-color: rgba(151, 145, 145, 0.5);
+    background-color: #eaceaab9;
     position:absolute;
     top: 10%;
     left: 60%;
+    margin: auto;
     padding: 90px;
     border-radius: 15px;
     height: 350px;
@@ -24,8 +28,7 @@ body{
 
 .tela-login h1{
     border-radius: 10px;
-
-    text-align: center;
+    text-align: left;
     font-family: "Delius", cursive;
     margin-bottom: 70px;
 }
@@ -51,16 +54,6 @@ body{
 .logo{
     position: absolute;
     top: 5%;
-    left: 12%;
-    width: 600px;
-}
-
-.café{
-    position: absolute;
-    top: -60%;
-    left: 55%;
-    width: 600px;
-    height: 100%;
-
-
+    left: 5%;
+    width: 700px;
 }
