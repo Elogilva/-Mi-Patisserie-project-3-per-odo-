@@ -1,22 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(fundopreto.jpg) ;
+    background-color: #31241B;
 }
 .tela-login{
     display: flex;
     flex-direction: column;
 
-    background-color: rgba(26, 25, 25, 0.918);
+    background-color: rgb(89, 73, 51);
     position:absolute;
     top: 20%;
     left: 70%;
     padding: 80px;
     border-radius: 15px;
     height: 350px;
+
+    box-shadow: 2px 2px 5px black;
 }
 
-.tela-login input, button{
+.tela-login h1{
+    border-radius: 10px;
+
+    text-align: center;
+    font-family: "Delius", cursive;
+    margin-bottom: 70px;
+}
+
+.tela-login input{
+    padding: 10px;
     margin-top: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 1px 1px 4px black;
+    
+}
+
+.tela-login #enviar_inp{
+    background-color: #A67B5B;
 }
 
 .logo{
