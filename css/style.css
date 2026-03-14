@@ -15,7 +15,7 @@ body{
     flex-direction: column;
     position:absolute;
 
-    background-image: linear-gradient(90deg,rgb(51, 25, 1), rgb(98, 59, 14), rgb(51, 25, 1));
+    background-image: linear-gradient(90deg,#331901, #623b0e, #331901);
     
     top: 5%;
     left: 60%;
@@ -30,7 +30,7 @@ body{
     outline: 2px solid #d4af37; 
     outline-offset: -10px; 
 
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 5px #000000;
 }
 
 .tela-login h1{
