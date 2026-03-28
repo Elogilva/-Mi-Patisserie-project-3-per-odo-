@@ -73,9 +73,8 @@ body{
 }
 
 .logo{
-    position: absolute;
-    top: -4%;
-    left: 5%;
-    width: 700px;
+    top: 4%;
+    left: 1%;
+    width: 900px;
 }
 
