@@ -2,91 +2,165 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Patisserie</title>
-
-<link rel="stylesheet" href="/css/index.css">
-<style>
-    body {
-        background-image: url('/Imagens-Referencias/Couro-fundo.png');
-        background-size: cover;
-    }
-    
-</style>
+<link rel="stylesheet" href="/css/Index.css">
+</head>
 
 <body>
 
-<header>
+<header class="header-topo">
 
+    <button id="toggleMenu" class="btn-menu">☰</button>
 
-<header>
-    <a href="#inicio"><img src="/imagem/logo-melhorada.png" class="logo"></a>
-</header>
-<header>
+    <a href="#inicio">
+        <img src="../Imagens-Referencias/logo-melhorada.png" class="logo">
+    </a>   
+    
+ <!--<main class="conteudo">!-->
+    <div id="divPesquisa">
+        <input type="text" id="pesquisa" placeholder="Pesquisar...">
+        <button onclick="buscar()">Buscar</button>
+        
+    </div>
+    
+    <a href="#Perfil">
+        <img src="/Imagens-Referencias/Perfil-café.png" alt="Acesso ao Perfil" class="perfil"></a>
 
-<nav class="menu">
-<a href="#Novidades">Novidades</a>
-<a href="#Doces">Doces</a>
-<a href="#Salgados">Salgados</a>
-<a href="#Bolos">Bolos</a>
-<a href="#Bebidas">Bebidas</a>
-</nav>
-
-</header>
-
-<div class="perfil">
-<a href="#"><img src="/Imagens-Referencias/profile_5987462.png" alt="logo"></a>
-</div>
-
+    </a>   
+    
 </header>
 
-<section id="inicio" class="secao">
-<h1>Bem-vindo à Mi Patisserie</h1>
-<p>Doceria e Cafeteria</p>
 
+<section class="secao">
+    
+    <header class="header-lateral">
+
+    <nav class="menu">
+
+    <a href="#Novidades">Novidades</a>
+    <a href="#Doces">Doces</a>
+    <a href="#Salgados">Salgados</a>
+    <a href="#Bolos">Bolos</a>
+    <a href="#Bebidas">Bebidas</a>
+    <a href="#Historico">Pedidos Anteriores</a>
+    <br>
+    
+    </nav>
+
+    </header>
+
+        <div id="resultados" class="cards"></div>
+
+        <section id="inicio" class="secao">
+            <h1>Bem-vindo à Mi Patisserie</h1>
+            <p>Doceria e Cafeteria</p>
+        </section>
+
+
+        <section id="Novidades" class="secao">
+            <h2>Novidades</h2>
+            <div id="itens">
+                <button onclick="voltar()">◀</button>
+                <div class="carrossel">
+                    
+                    <div class="carrossel-container" id="carrossel">
+                        <div class="card">
+                            <h3>Novo Doce 1</h3></div>
+                        <div class="card"><h3>Novo Doce 2</h3></div>
+                        <div class="card"><h3>Novo Doce 3</h3></div>
+                    </div>
+                    
+                </div>
+                <button onclick="avancar()">▶</button>
+            </div>
+            
+        </section>
+
+    
+        <section id="Doces" class="secao">
+            <h2>Doces</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Macaron</h3>
+                    <p>Doce francês delicado.</p>
+                    <button onclick="adicionarItem('Macaron', 12)">Adicionar</button>
+                    </div>
+
+                    <div class="card">
+                    <h3>Cheesecake</h3>
+                    <p>Creme suave e base crocante.</p>
+                    <button onclick="adicionarItem('Cheesecake', 15)">Adicionar</button>
+                    </div>
+
+                    <div class="card">
+                    <h3>Brownie</h3>
+                    <p>Chocolate intenso.</p>
+                    <button onclick="adicionarItem('Brownie', 10)">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="Salgados" class="secao">
+            <h2>Salgados</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Croissant</h3>
+                    <p>Massa leve e amanteigada.</p>
+                    <button onclick="adicionarItem('Croissant', 8)">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+    
+        <section id="Bebidas" class="secao">
+            <h2>Bebidas</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Expresso</h3>
+                    <p>Café forte.</p>
+                    <button onclick="adicionarItem('Expresso', 6)">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="Bolos" class="secao">
+            <h2>Bolos</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Red Velvet</h3>
+                    <p>Bolo cremoso.</p>
+                    <button onclick="adicionarItem('Red Velvet', 20)">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+            <div class="painel-carrinho">
+            <ul id="listaCarrinho"></ul>
+            <p id="total">Total: R$ 0,00</p>
+            <button onclick="finalizarPedido()">Finalizar</button>
+            </div>
+        </main>
+
+    <section>
+        <div class="historico">
+            <h2>Pedidos Anteriores</h2>
+            <ul id="historicoLista"></ul>
+        </div>
 </section>
+</main>
 
-<section class="titulo">
-<h2>BOLOS</h2>
-</section>
+<footer>
+<p>Mi Patisserie © 2026</p>
+</footer>
 
-
-<section class="produtos">
-
-<div class="card">
-<div class="imagem"></div>
-<p>Chocolate</p>
-</div>
-
-<div class="card">
-<div class="imagem"></div>
-<p>Cenoura</p>
-</div>
-
-<div class="card">
-<div class="imagem"></div>
-<p>Torta Cookie</p>
-</div>
-
-<div class="card">
-<div class="imagem"></div>
-<p>Red Velvet</p>
-</div>
-
-<div class="card">
-<div class="imagem"></div>
-<p>Brigadeiro</p>
-</div>
-
-</section>
-
-<div class="carrinho">
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-</svg>
-R$00,00
-</div>
+<script src="/JAVASCRIPT/Index.js"></script>
 
 </body>
 </html>

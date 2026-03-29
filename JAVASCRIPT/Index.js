@@ -52,20 +52,31 @@ function carregarHistorico(){
 
 
 
-
+// Buscar
 
 function buscar(){
-    const content = document.getElementById("resultados");
-    const inputSearch = document.getElementById("pesquisa");
+    let texto = document.getElementById("pesquisa").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+    let resultados = document.getElementById("resultados");
 
+    resultados.innerHTML = ""
     
+    let i = 0
+    try{
+        for (i = 0; i < cards.length; i++){
+            const h3 = cards[i].querySelector('.secao h3')
+            console.log(h3.innerHTML)
+            if (texto == ""){
+                resultados.textContent = "Digite algo válido"
+            } else if (h3.innerHTML.toLowerCase().includes(texto)){
+                resultados.appendChild(cards[i].cloneNode(true))
+            }
+        }  
+    } catch {
+        resultados.innerHTML = "clique novamente";
+    }    
 };
 
-function addHTML(item){
-    const div = document.createElement("div");
-    div.innerHTML = item;
-    content.appendChild(div);
-}
 
 
 
