@@ -244,6 +244,8 @@ section .carrossel{
     font-size: 24px;
     cursor: pointer;
     color: #e7b614;
+
+    margin-top: 130%;
 }
 
 #itens button:hover{
