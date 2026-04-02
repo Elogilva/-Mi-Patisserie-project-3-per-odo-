@@ -73,6 +73,36 @@ background:#571209;
     margin: 0 auto;
 }
 
+#finalizar {
+   border: 2px solid rgb(255, 238, 0);
+   background-color: rgba(82, 82, 82, 0.178); 
+   padding: 10px;
+   color: rgb(255, 251, 0);
+}
+#finalizar:hover{
+    background-color: rgba(251, 255, 0, 0.26);
+    color: rgb(82, 69, 0);
+
+}
+
+button {
+    border: 1px solid rgb(158, 134, 0);
+    border-radius: 5px;
+    background-color: rgba(224, 221, 0, 0.514);
+    color: white;
+    margin-bottom: 20px;
+
+    transition: 0.2s;
+}
+
+button:hover{
+    border: 1px solid #e7b614;
+    background-color: gold;
+    color: gray;
+}
+
+
+
 #divPesquisa input{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;

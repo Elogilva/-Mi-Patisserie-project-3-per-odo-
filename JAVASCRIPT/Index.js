@@ -39,14 +39,45 @@ function finalizarPedido(){
 
 function carregarHistorico(){
     let lista = document.getElementById("historicoLista");
+    let itens_mostrados = document.getElementById('itensCompletos')
+
     lista.innerHTML = "";
-
+    let clicks = 0;
+    
     let historico = JSON.parse(localStorage.getItem("historico")) || [];
-
     historico.forEach((pedido, i) => {
+        const botao = document.createElement('button')
+        botao.textContent = 'Mostrar itens'
+
+
         let li = document.createElement("li");
+        let li2 = document.createElement("li");
+        let titulo = document.createElement('h3');
+
+        
+
         li.innerText = "Pedido " + (i+1) + " (" + pedido.length + " itens)";
         lista.appendChild(li);
+        lista.appendChild(botao)
+        
+        botao.addEventListener('click', () => {
+            console.log(clicks)
+            if (clicks == 0){
+                clicks = 1
+                titulo.textContent = `Pedido ${i+1}`
+                botao.textContent = 'Ocultar'
+                itens_mostrados.appendChild(titulo.cloneNode(true))
+                pedido.forEach(item => {
+                li2.innerText = "Pedido: " + (item["nome"]) + " - Preço: R$ " + (item["preco"]);
+                itens_mostrados.appendChild(li2.cloneNode(true))
+                })
+            } else if (clicks == 1){
+                clicks = 0;
+                itens_mostrados.innerHTML = ""
+                botao.textContent = 'Mostrar itens'
+            }
+        }) 
+           
     });
 }
 
