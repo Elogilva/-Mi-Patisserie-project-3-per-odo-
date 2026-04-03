@@ -42,43 +42,58 @@ function carregarHistorico(){
     let itens_mostrados = document.getElementById('itensCompletos')
 
     lista.innerHTML = "";
-    let clicks = 0;
-    
+
     let historico = JSON.parse(localStorage.getItem("historico")) || [];
+
+    let abertoAtual = null;
+
     historico.forEach((pedido, i) => {
         const botao = document.createElement('button')
         botao.textContent = 'Mostrar itens'
 
-
         let li = document.createElement("li");
-        let li2 = document.createElement("li");
-        let titulo = document.createElement('h3');
+        let titulo1 = document.createElement('h1')
+        let titulo3 = document.createElement('h3');
 
-        
 
         li.innerText = "Pedido " + (i+1) + " (" + pedido.length + " itens)";
         lista.appendChild(li);
         lista.appendChild(botao)
-        
         botao.addEventListener('click', () => {
-            console.log(clicks)
-            if (clicks == 0){
-                clicks = 1
-                titulo.textContent = `Pedido ${i+1}`
-                botao.textContent = 'Ocultar'
-                itens_mostrados.appendChild(titulo.cloneNode(true))
-                pedido.forEach(item => {
-                li2.innerText = "Pedido: " + (item["nome"]) + " - Preço: R$ " + (item["preco"]);
-                itens_mostrados.appendChild(li2.cloneNode(true))
-                })
-            } else if (clicks == 1){
-                clicks = 0;
+            
+            if (abertoAtual === botao){
                 itens_mostrados.innerHTML = ""
-                botao.textContent = 'Mostrar itens'
+                botao.textContent = "Mostrar itens"
+                abertoAtual = null
+                return;
             }
-        }) 
-           
-    });
+
+            if (abertoAtual !== null){
+                abertoAtual.textContent = "Mostrar itens"
+            }
+
+            itens_mostrados.innerHTML = ""
+
+            titulo1.textContent = "Lista dos Pedidos"
+            itens_mostrados.appendChild(titulo1)
+            
+            titulo3.textContent = `Pedido ${i+1}`
+            botao.textContent = 'Ocultar'
+            itens_mostrados.appendChild(titulo3)
+
+            pedido.forEach(item => {
+                let li2 = document.createElement("li");
+                li2.innerText = "Pedido: " + (item["nome"]) + " - Preço: R$ " + (item["preco"]);
+                itens_mostrados.appendChild(li2)
+            })  
+            
+            botao.textContent = "Ocultar"
+            abertoAtual = botao
+            
+                      
+        
+          });
+    })
 }
 
 
