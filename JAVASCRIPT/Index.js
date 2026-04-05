@@ -105,22 +105,27 @@ function buscar(){
     let cards = document.querySelectorAll(".card");
     let resultados = document.getElementById("resultados");
 
-    resultados.innerHTML = ""
+    resultados.innerHTML = "";
+
+    if (texto === ""){
+        resultados.textContent = "Digite algo válido"
+        return;
+    }
+
+    let encontrado
+
+    const titulos = document.querySelectorAll(".secao h3")
+
+    titulos.forEach(h3 => {
+        if (h3.textContent.toLowerCase().startsWith(texto)){
+            resultados.appendChild(h3.closest(".card").cloneNode(true))
+            encontrado = true;
+        }
+    })   
     
-    let i = 0
-    try{
-        for (i = 0; i < cards.length; i++){
-            const h3 = cards[i].querySelector('.secao h3')
-            console.log(h3.innerHTML)
-            if (texto == ""){
-                resultados.textContent = "Digite algo válido"
-            } else if (h3.innerHTML.toLowerCase().includes(texto)){
-                resultados.appendChild(cards[i].cloneNode(true))
-            }
-        }  
-    } catch {
-        resultados.innerHTML = "clique novamente";
-    }    
+    if (!encontrado) {
+        resultados.textContent = "Nenhum produto/alimentado com esse nome foi encontrado!"
+    }
 };
 
 
